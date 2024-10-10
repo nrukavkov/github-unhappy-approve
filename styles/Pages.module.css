@@ -1,22 +1,33 @@
 .container {
   width: 500;
-  height: 385px;
-  background: linear-gradient(153deg, rgb(116, 56, 216), rgb(18, 150, 170) 74%);
+  height: 285px;
+  background: #151b23;
   padding: 5px;
   color: white;
 }
 
+.title {
+  font-size: 2em;
+  font-size: x-large;
+}
+
+.settingsdescription {
+  font-size: 1em;
+}
+
+.icon {
+  height: 1em; 
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
 .main {
   width: 490px;
-  height: 375px;
+  height: 275px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.title {
-  font-size: x-large;
 }
 
 .description {
@@ -32,70 +43,7 @@
   color: grey;
   border-radius: 5px;
   width: 100%;
+  height: 100%;
   padding: 20px;
   font: small Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.buttonCreateSecret {
-  display: inline-block;
-  outline: 0;
-  cursor: pointer;
-  padding: 5px 16px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  vertical-align: middle;
-  border: 1px solid;
-  border-radius: 6px;
-  color: #ffffff;
-  background-color: #2ea44f;
-  border-color: #1b1f2326;
-  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
-  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-  transition-property: color, background-color, border-color;
-}
-
-.buttonShareSecret {
-  display: inline-block;
-  outline: 0;
-  cursor: pointer;
-  padding: 5px 16px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  vertical-align: middle;
-  border: 1px solid;
-  border-radius: 6px;
-  color: #ffffff;
-  background-color: #ad2f2f;
-  border-color: #1b1f2326;
-  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
-  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-  transition-property: color, background-color, border-color;
-}
-
-.buttonCopyToClipboard {
-  display: inline-block;
-  outline: 0;
-  cursor: pointer;
-  padding: 5px 16px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  vertical-align: middle;
-  border: 1px solid;
-  border-radius: 6px;
-  color: #ffffff;
-  border-color: #1b1f2326;
-  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
-  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-  transition-property: color, background-color, border-color;
-}
-
-.buttonCopyToClipboardSuccess {
-  background-color: #2ea44f;
-}
-
-.buttonCopyToClipboardDefault {
-  background-color: #cbc3c310;
 }

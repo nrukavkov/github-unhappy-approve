@@ -3,7 +3,7 @@ import styles from '../../styles/Pages.module.css';
 
 const InputComment = () => {
   // Устанавливаем дефолтное значение для текста
-  const [text, setText] = useState('Approve merging these changes with eye roll or tut...');
+  const [text, setText] = useState('');
 
   useEffect(() => {
     // Получаем значение из chrome.storage.sync, если оно там сохранено
@@ -34,7 +34,7 @@ const InputComment = () => {
 
   return (
     <>
-      <input 
+      <textarea 
         className={styles.code} 
         value={text}  // Используем значение из состояния
         onChange={handleChange}  // Обрабатываем изменения
