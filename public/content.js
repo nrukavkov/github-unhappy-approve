@@ -1,8 +1,9 @@
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', modifyApproveText);
+    document.addEventListener('DOMContentLoaded', observeDOMChanges);
 } else {
-    afterDOMLoaded();
+    observeDOMChanges();
 }
+
 
 function insertTextIntoTextarea(text) {
     const textarea = document.querySelector('textarea[name="pull_request_review[body]"]');
@@ -20,12 +21,12 @@ function handleClonedRadioClick() {
     });
 }
 
-function afterDOMLoaded() {
+function unhappyApproveItem() {
     const radioWraps = document.querySelectorAll('.FormControl-radio-wrap');
 
     if (document.getElementById('pull_request_review_event_approve_but_unhappy')) {
         console.log('Unhappy approve already exists');
-        return; 
+        return;
     }
 
     radioWraps.forEach((wrap) => {
@@ -56,9 +57,20 @@ function afterDOMLoaded() {
     });
 }
 
-chrome.runtime.onMessage.addListener((msg) => {
-    console.log('new event:' + msg)
-    if (msg.url.endsWith("files")) {
-        afterDOMLoaded();
-    }
-});
+function observeDOMChanges() {
+    const targetNode = document.body;
+
+    const config = { childList: true, subtree: true };
+
+    const callback = function (mutationsList, observer) {
+        for (let mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+                console.log('DOM is changed');
+                unhappyApproveItem(); 
+            }
+        }
+    };
+
+    const observer = new MutationObserver(callback);
+    observer.observe(targetNode, config);
+}

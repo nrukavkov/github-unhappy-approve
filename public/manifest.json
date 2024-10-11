@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Github — Unhappy Approve",
   "short_name": "github-unhappy-approve",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Creates additional option for approve if your are not happy about the code",
   "icons": {
     "16": "/icons/icon16.png",
@@ -13,14 +13,17 @@
   "permissions": [
     "storage",
     "activeTab",
-    "scripting",
-    "webNavigation"
+    "scripting"
   ],
   "content_scripts": [
     {
-      "matches": ["https://github.com/*"],
+      "matches": [
+        "https://github.com/*"
+      ],
       "run_at": "document_end",
-      "js": ["content.js"]
+      "js": [
+        "content.js"
+      ]
     }
   ],
   "host_permissions": [
